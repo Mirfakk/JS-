@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../src/declares.js"></script>
+</head>
+
+<body>
+    <script>
+        //map函数调用------------------------------------
+        // //声明一个数组
+        //const arr = [1, 2, 3, 4, 236, 5, 101];
+
+        // //index 当前元素的下标
+        // const result = map(arr, (item, index) => {
+        //     console.log(index);
+        //     return item * 10;
+        // })
+        // console.log(result);
+
+        //reduce函数调用------------------------------------
+
+        //第一个参数是数组，第二个是回调函数，第三个是初始值
+        // let result = reduce(arr, function (res, value) {
+        //     return res + value;
+        // }, 0);//0就是初始值value,结果就是1+2+3+4+5
+        // console.log(result);
+
+        //filter函数调用---------------------------------
+
+        //返回数组中奇数
+        //工具库自带
+        // const result = arr.filter(item => item % 2 == 1);
+        // console.log(result);
+
+        //自己定义的
+        //第一个参数是数组，第二是执行的回调
+        // const result = filter(arr, item => item % 2 == 1);
+        // console.log(result);
+
+        //find函数调用---------------------------------
+        //找到符合要求的值，并返回，未找到返回undefined
+        // const result = arr.find(item => {
+        //     return item > 100;
+        // });
+
+        // const result = find(arr, (item, index) => {
+        //     return item > 100;
+        // })
+
+        //findIndex函数调用---------------------------------
+        // 找到符合要求的值，并返回，未找到返回undefined
+        // const result = arr.findIndex(item => {
+        //     return item > 100;
+        // });
+
+        // const result = findIndex(arr, (item, index) => {
+        //     return item > 1500;
+        // })
+
+        //every,some函数调用------------------------------------
+        // every  如果数组中每个元素都满足测试函数，则返回true，否则返回false
+        // some  只要数组中有一个元素都满足测试函数，则返回true，否则返回false
+        const arr = [1, 2, 3, 4, 236, 5, 101];
+        const result = some(arr, (item, index) => {
+            return item > 500;
+        })
+        console.log(result);
+    </script>
+</body>
+
+</html>
