@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../src/concat.js"></script>
+</head>
+
+<body>
+    <script>
+        //数组合并-------------------------------------------
+        // let arr = [1, 2, 3];
+        //使用concat能够将数组中的元素与其他数组合并返回成一个新数组，也可以单独添加。
+        // const result = arr.concat([4, 5, 6], 7, 8);//原型方法
+
+        // const result = concat(arr, [4, 5, 6], 7, 8, [9, 10]);
+
+        // console.log(result);
+
+        //数组切片 拆分-------------------------------------------
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+        // let result = arr.slice(1, 6);//第一个参数是开始下标，第二个是结束下标后一位，因为结束的下标是取不到的，想要6就要截7
+
+        const result = slice(arr, 3, 6);//如果只传递数组，则会使用默认值0和数组长度，也就是不切片。
+        console.log(result);
+    </script>
+</body>
+
+</html>
