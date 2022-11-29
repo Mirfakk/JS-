@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合并对象测试</title>
+    <script src="../src/mergeObject.js"></script>
+</head>
+
+<body>
+    <script>
+        //将对象合并，如果有同名不同值，则会产生产生为数组
+        const object = {
+            a: [{ x: 2 }, { y: 4 }],
+            b: 1,
+            c: 'bar'
+        }
+        const other = {
+            a: { z: 3 },
+            b: [2, 3],
+            c: 'foo'
+        }
+        console.log(mergeObject(object, other));
+    </script>
+</body>
+
+</html>
