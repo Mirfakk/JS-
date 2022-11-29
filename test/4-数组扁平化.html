@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组扁平化</title>
+    <script src="../src/flatten.js"></script>
+</head>
+
+<body>
+    <script>
+        // 数组扁平化:将多维数组变为一维数组
+        let arr = [1, 2, [3, 4, [5, 6]], 7];
+
+        //有两种实现方式
+        // console.log(flatten1(arr));
+
+
+        //方法2：使用some 和concat
+        console.log(flatten2(arr));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除数组元素</title>
+    <script src="../src/pull.js"></script>
+</head>
+
+<body>
+    <script>
+        //pull(arr,values)
+        //删除原数组中与value一样的元素，返回所有删除元素的数组
+        let arr = [1, 2, 3, 5, 3, 7];
+        // console.log(pull(arr, 2, 7, 3, 7));
+        // console.log(arr);//原数组会发生变化
+
+        //pullAll则是把删除的元素放在数组中
+        console.log(pullAll(arr, [2, 7, 3, 7]));
+        console.log(arr);//原数组会发生变化
+    </script>
+</body>
+
+</html>
