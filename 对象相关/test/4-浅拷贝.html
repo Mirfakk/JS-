@@ -16,13 +16,19 @@
             深拷贝：每个person对象也被复制了一份新的
         */
 
-        const obj = { x: 'abc', y: { m: 1 } };
+        // const obj = { x: 'abc', y: { m: 1 } };
+        const obj = [1, 2, 3, 4];
 
-        const result = clone1(obj);
+        // const result = clone1(obj);
+
+        //用es5的方式实现浅拷贝
+        const result = clone2(obj);
 
         //修改拷贝后的值，会影响拷贝前的值,因为指向的是同一个地址
-        result.y.m = 2;
+        // result.y.m = 2;
+        console.log(obj);
         console.log(result);
+        console.log(obj === result);
     </script>
 </body>
 

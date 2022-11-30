@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深拷贝</title>
+    <script src="../src/deepClone.js"></script>
+</head>
+
+<body>
+    <script>
+        /*
+        实现1：大众版
+            存在问题：
+            1.函数属性会丢失
+            2.循环引用会出错
+        实现2：面试基础版
+            解决了 1.函数属性会丢失 问题：
+        实现3：面试加强版
+            解决了 2.循环引用会出错 问题：
+        实现4：面试加强版2（优化遍历性能）
+            数组：while |for|forEach|优于 for-in|keys()&forEach
+            对象：for-in与keys() forEach 差不多
+        */
+
+        const obj = {
+            a: 1,
+            b: ['e', 'f', 'g'],
+            c: { h: 20 },
+            //缺点：JSON不能克隆方法
+            d: function fn() { }
+        }
+
+
+        //方式二 递归拷贝 -----------
+        const result = deepClone2(obj);
+        result.c.h = 2000;
+
+        //还是存在循环引用的问题
+        // 把c压进b
+        obj.b.push(obj.c);
+        // 再把b压进c
+        obj.c.j = obj.b;
+
+        console.log(obj);
+        console.log(result);
+
+
+        //方式一 -----------
+        //深拷贝
+        // const result = deepClone1(obj);
+        // //修改拷贝后的数据，不会改变原始数据（深拷贝）
+
+        //循环引用的问题
+        //把c压进b
+        // obj.b.push(obj.c);
+        //再把b压进c
+        // obj.c.j = obj.b;
+
+        // result.c.h = 2000;
+        // console.log(obj);
+        // console.log(result);
+    </script>
+</body>
+
+</html>
