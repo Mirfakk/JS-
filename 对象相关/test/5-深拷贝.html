@@ -33,19 +33,38 @@
             d: function fn() { }
         }
 
-
-        //方式二 递归拷贝 -----------
-        const result = deepClone2(obj);
-        result.c.h = 2000;
-
-        //还是存在循环引用的问题
+        //方式四 递归拷贝 -----------
+        const result = deepClone3(obj);
+        //解决循环引用的问题
         // 把c压进b
         obj.b.push(obj.c);
         // 再把b压进c
         obj.c.j = obj.b;
-
         console.log(obj);
         console.log(result);
+
+        // //方式三 递归拷贝 -----------
+        // const result = deepClone3(obj);
+        // //解决循环引用的问题
+        // // 把c压进b
+        // obj.b.push(obj.c);
+        // // 再把b压进c
+        // obj.c.j = obj.b;
+        // console.log(obj);
+        // console.log(result);
+
+        // //方式二 递归拷贝 -----------
+        // const result = deepClone2(obj);
+        // result.c.h = 2000;
+
+        // //还是存在循环引用的问题
+        // // 把c压进b
+        // obj.b.push(obj.c);
+        // // 再把b压进c
+        // obj.c.j = obj.b;
+
+        // console.log(obj);
+        // console.log(result);
 
 
         //方式一 -----------
