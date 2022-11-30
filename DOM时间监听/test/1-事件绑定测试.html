@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件绑定测试</title>
+    <script src="../src/index.js"></script>
+</head>
+
+<body>
+
+    <ul id="items">
+        <li>AAAA</li>
+        <li>BBBB</li>
+        <li>CCCC</li>
+        <li>DDDD</li>
+        <div>EEEE</div>
+    </ul>
+
+    <script>
+        //为ul绑定点击事件，并且再控制台输出文本
+        //使用事件委托
+        //调用（自定义）函数绑定事件
+        //参数：父级元素选择器，绑定事件，触发事件,(事件对象e)
+        addEventListener('#items', 'click', function (e) {
+            //输出标签文本
+            console.log(this.innerHTML);
+        }, 'li');//我们要给li绑定事件，所以填li
+    </script>
+</body>
+
+</html>
