@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件总线测试</title>
+    <script src="../src/index.js"></script>
+</head>
+
+<body>
+    <script>
+        //声明全局对象 eventBus
+        //功能：绑定事件,data就是数据，提醒 用户已经登录
+        eventBus.on('login', data => {
+            //触发login事件后，执行回调函数
+            console.log(data + '用户已登录');
+        });
+
+        //可以为同类型事件绑定多个回调
+        eventBus.on('login', data => {
+            //触发login事件后，执行回调函数
+            console.log(data + '登录数据已经写入');
+        })
+
+        eventBus.on('loginout', data => {
+            //触发login事件后，执行回调函数
+            console.log(data + '登录数据已经写入');
+        })
+
+        console.log(eventBus);
+        //触发事件 
+        setTimeout(() => {
+            eventBus.emit('login', '张三')
+        }, 1000)
+
+        //解绑事件
+        //参数传递事件名会清除该事件，不传名字清除所有
+        eventBus.off();
+    </script>
+</body>
+
+</html>
